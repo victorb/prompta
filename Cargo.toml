@@ -1,0 +1,24 @@
+[package]
+name = "prompta"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow = "1.0.95"
+chrono = "0.4.39"
+clap = { version = "4.5.27", features = ["derive"] }
+dirs = "6.0.0"
+regex = "1.11.1"
+serde = { version = "1.0.217", features = ["derive"] }
+serde_json = "1.0.137"
+
+[profile.gold]
+inherits = "release"
+opt-level = 3               # Maximum optimization
+lto = "fat"                 # Full link-time optimization
+codegen-units = 1           # Slower build, better optimization
+panic = "abort"             # Remove panic unwinding code
+strip = true                # Strip symbols from binary
+debug = false               # No debug info
+incremental = false         # Disable incremental compilation
+overflow-checks = false     # Disable runtime integer overflow checks

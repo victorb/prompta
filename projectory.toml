@@ -1,0 +1,4 @@
+name = "prompta"
+description = "CLI for manging LLM prompts with templating, shell execution and a bit more"
+tags = ["llm", "prompts", "user experience", "developer tooling"]
+langs = ["Rust", "Markdown"]
